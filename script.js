@@ -1,3 +1,15 @@
+/* Mobile menu (sidebar open/close) */
+const sidebar=document.querySelector('.sidebar');
+const overlay=document.getElementById('overlay');
+function toggleMenu(open){
+  sidebar.classList.toggle('open',open);
+  overlay.classList.toggle('show',open);
+}
+document.getElementById('menuBtn').onclick=()=>toggleMenu(!sidebar.classList.contains('open'));
+overlay.onclick=()=>toggleMenu(false);
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+window.addEventListener('resize',()=>{if(window.innerWidth>900)toggleMenu(false)});
+
 /* Sidebar active state */
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{
   document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));
