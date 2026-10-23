@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="overlay" id="overlay"></div>
 <div class="app">
 
   <!-- Sidebar -->
@@ -39,15 +40,16 @@
   <!-- Main -->
   <section class="main">
     <div class="topbar">
-      <div class="icon-btn"><i class="fa-solid fa-arrow-left"></i></div>
-      <div class="icon-btn"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="crumb">Fintrixity &nbsp;›&nbsp; <b>Dashboard</b></div>
+      <div class="icon-btn menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
+      <div class="icon-btn hide-sm"><i class="fa-solid fa-arrow-left"></i></div>
+      <div class="icon-btn hide-sm"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="crumb hide-sm">Fintrixity &nbsp;›&nbsp; <b>Dashboard</b></div>
       <div class="top-right">
-        <div class="icon-btn"><i class="fa-regular fa-circle-question"></i></div>
-        <div class="icon-btn"><i class="fa-regular fa-envelope"></i></div>
+        <div class="icon-btn hide-sm"><i class="fa-regular fa-circle-question"></i></div>
+        <div class="icon-btn hide-sm"><i class="fa-regular fa-envelope"></i></div>
         <div class="icon-btn"><i class="fa-regular fa-bell"></i></div>
         <div class="avatar"><i class="fa-solid fa-user"></i></div>
-        <button class="btn primary" style="padding:9px 14px">Share <i class="fa-solid fa-share-nodes"></i></button>
+        <button class="btn primary share-btn" style="padding:9px 14px"><span class="share-txt">Share </span><i class="fa-solid fa-share-nodes"></i></button>
       </div>
     </div>
 
@@ -126,10 +128,12 @@
             <div class="pill">Filter <i class="fa-solid fa-sliders"></i></div>
           </div>
         </div>
-        <table>
-          <thead><tr><th style="width:30px"><span class="chk"></span></th><th>Activity</th><th>Order ID</th><th>Date</th><th>Time</th><th>Price</th><th>Status</th><th></th></tr></thead>
-          <tbody id="tbody"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:30px"><span class="chk"></span></th><th>Activity</th><th>Order ID</th><th>Date</th><th>Time</th><th>Price</th><th>Status</th><th></th></tr></thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
